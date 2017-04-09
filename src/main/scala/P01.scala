@@ -7,6 +7,4 @@ object P01 {
   def last[T](list: List[T]): T = {
     if (list.size > 1) last(list.tail) else list.head
   }
-
-
 }

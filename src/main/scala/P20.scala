@@ -5,7 +5,7 @@ object P20 {
     println(removeAt(1, List('a, 'b, 'c, 'd)))
   }
 
-  def removeAt(index: Int, list: List[Symbol]): (List[Symbol], Symbol) = list match {
+  def removeAt[A](index: Int, list: List[A]): (List[A], A) = list match {
     case x :: xs =>
       if (index > 0) {
         val (innerList, removedElement) = removeAt(index - 1, xs)

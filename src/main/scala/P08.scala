@@ -5,7 +5,7 @@ object P08 {
   }
 
   // initial solution ;(
-  def compress(list: List[Symbol]): List[Symbol] = {
+  def compress[T](list: List[T]): List[T] = {
     if (list.size == 1) {
       list
     } else if (list.head == list(1)) {
@@ -16,7 +16,7 @@ object P08 {
   }
 
   // after having the bravery to use matching
-  def compressMatched(list: List[Symbol]): List[Symbol] = list match {
+  def compressMatched[T](list: List[T]): List[T] = list match {
     case List(x) => List(x)
     case x :: xs => if (x == xs.head) compressMatched(xs) else x :: compressMatched(xs)
   }

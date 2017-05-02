@@ -5,7 +5,7 @@ object P15 {
     println(duplicateN(3, List('a, 'b, 'c, 'c, 'd)))
   }
 
-  def duplicateN(times: Int, list: List[Symbol]): List[Symbol] = {
+  def duplicateN[T](times: Int, list: List[T]): List[T] = {
     list.flatMap(x => List.fill(times)(x))
   }
 }

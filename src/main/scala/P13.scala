@@ -6,7 +6,7 @@ object P13 {
   }
 
   // break list in important points
-  def encodeDirect(list: List[Symbol]): List[(Int, Symbol)] = list match {
+  def encodeDirect[T](list: List[T]): List[(Int, T)] = list match {
     case Nil => List()
     case _ => val (packed, next) = list.span(_ == list.head)
       (packed.length, packed.head) :: encodeDirect(next)

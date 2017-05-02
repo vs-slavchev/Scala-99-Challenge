@@ -5,7 +5,7 @@ object P16 {
     println(drop(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k)))
   }
 
-  def drop(nth: Int, list: List[Symbol]): List[Symbol] = {
+  def drop[T](nth: Int, list: List[T]): List[T] = {
     list.zipWithIndex.filterNot(x => (x._2 + 1) % 3 == 0).map(_._1)
   }
 }

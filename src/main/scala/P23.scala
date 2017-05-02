@@ -8,7 +8,7 @@ object P23 {
     println(randomSelect(3, List('a, 'b, 'c, 'd, 'f, 'g, 'h)))
   }
 
-  def randomSelect(times: Int, list: List[Symbol]): List[Symbol] = {
+  def randomSelect[A](times: Int, list: List[A]): List[A] = {
     if (times > 0) {
       val (smallerList, taken) = P20.removeAt(random.nextInt(list.length), list)
       taken :: randomSelect(times - 1, smallerList)

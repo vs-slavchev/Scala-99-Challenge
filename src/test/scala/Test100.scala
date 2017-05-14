@@ -22,6 +22,14 @@ class Test100 extends FunSuite {
     assert( ! P100.isBalanced("(((()"))
   }
 
+  test("closing 2 should not be balanced") {
+    assert( ! P100.isBalanced("))"))
+  }
+
+  test("opening 2 should not be balanced") {
+    assert( ! P100.isBalanced("(("))
+  }
+
   test("only opening should not be balanced") {
     assert( ! P100.isBalanced("("))
   }
